@@ -1,0 +1,41 @@
+CalendarIterator
+================
+
+Calendar Iterator is a simple API to iterate of a calendar days of a month
+See the documentation for more instructions and examples
+
+Example
+=======
+
+  # creating a simple calendar
+  <table>
+    <tbody>
+      <% calendar_iterate do |d| %>
+        <%= d %>
+      <% end %>
+    </tbody>
+  </table>
+
+  # using links at calendar days
+  <table>
+    <tbody>
+      <% calendar_iterate do |d| %>
+        <%= link_to d, events_path(:day => d.mday) %>
+      <% end %>
+    </tbody>
+  </table>
+
+  # using a full customized <tr> and <td> tags
+  <table>
+    <tbody>
+      <% calendar_iterate.each_week do |w| %>
+      <tr class="some_class">
+        <% w.each do |d| %>
+          <td class="cell_class"><%= d %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+Copyright (c) 2009 Wilker Lucio, released under the MIT license
