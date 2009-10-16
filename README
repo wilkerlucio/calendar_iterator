@@ -25,6 +25,15 @@ Example
     </tbody>
   </table>
 
+  # changing the date of calendar (if you exclude any, the current will be taken)
+  <table>
+    <tbody>
+      <% calendar_iterate :month => 6, :year => 2009 do |d| %>
+        <%= d %>
+      <% end %>
+    </tbody>
+  </table>
+
   # using a full customized <tr> and <td> tags
   <table>
     <tbody>
@@ -38,4 +47,6 @@ Example
     </tbody>
   </table>
 
+
+Generate the rdoc (rake rdoc) to see a full documentation over elements
 Copyright (c) 2009 Wilker Lucio, released under the MIT license
